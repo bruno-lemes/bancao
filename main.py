@@ -141,6 +141,6 @@ while not ENCERRAR_SISTEMA:
         case _:
             print('\n \033[31m Informe uma opção válida \033[m \n')
 
-# Mensagem de encerramento
+# Mensagem de finalização
 print(50 * '=')
 print('\n \033[32m Obrigado por usar o Bancão, volte sempre! \033[m \n')
