@@ -112,9 +112,7 @@ class ContaBanco():
             A conta deve estar aberta.\n
             O saldo e a dívida devem estar zerados.
         """
-        if self._status_da_conta and self._divida_da_conta > 0 and self._saldo_da_conta > 0:
-            print('Conta encerrada') # Print simbólico, criar uma forma de deletar a conta
-        else:
+        if not (self._status_da_conta and self._divida_da_conta == 0 and self._saldo_da_conta == 0):
             print('\033[31m Não foi possível desativar a conta. \033[m')
 
     def depositar(self, deposito : float):
@@ -142,7 +140,7 @@ class ContaBanco():
             O valor do saque deve ser positivo.\n
             O valor do saque não deve ser maior que o saldo na conta.
         """
-        if self._saldo_da_conta > saque > 0:
+        if self._saldo_da_conta >= saque > 0:
             self._saldo_da_conta -= saque
         else:
             print('\033[31m Não foi possível realizar o saque. \033[m')
@@ -156,8 +154,10 @@ class ContaBanco():
         """
         if self._tipo_da_conta == 'cc':
             self._saldo_da_conta -= 12
+            self._divida_da_conta = 0
         elif self._tipo_da_conta == 'cp':
             self._saldo_da_conta -= 20
+            self._divida_da_conta = 0
 
     #Método para mostrar todas as informações da conta
     def info(self):
