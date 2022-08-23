@@ -91,17 +91,17 @@ class ContaBanco():
             Conta corrente: R$50 de saldo e R$12 de dívida inicial.
             Conta poupança: R$150 de saldo e R$20 de dívida inicial.
         """
-        if not self.status_da_conta:
-            self.status_da_conta = True
-            self.titular_da_conta = titular_da_conta
-            self.tipo_da_conta = tipo_da_conta
+        if not self._status_da_conta:
+            self._status_da_conta = True
+            self._titular_da_conta = titular_da_conta
+            self._tipo_da_conta = tipo_da_conta
             match tipo_da_conta:
                 case 'cc':
-                    self.saldo_da_conta = 50
-                    self.divida_da_conta = 12
+                    self._saldo_da_conta = 50
+                    self._divida_da_conta = 12
                 case 'cp':
-                    self.saldo_da_conta = 150
-                    self.divida_da_conta = 20
+                    self._saldo_da_conta = 150
+                    self._divida_da_conta = 20
         else:
             print('\033[31m Não foi possível abrir a conta. \033[m')
 
@@ -112,7 +112,7 @@ class ContaBanco():
             A conta deve estar aberta.\n
             O saldo e a dívida devem estar zerados.
         """
-        if self.status_da_conta and self.divida_da_conta > 0 and self.saldo_da_conta > 0:
+        if self._status_da_conta and self._divida_da_conta > 0 and self._saldo_da_conta > 0:
             print('Conta encerrada') # Print simbólico, criar uma forma de deletar a conta
         else:
             print('\033[31m Não foi possível desativar a conta. \033[m')
@@ -127,7 +127,7 @@ class ContaBanco():
             O valor do depósito deve ser positivo.
         """
         if deposito > 0:
-            self.saldo_da_conta += deposito
+            self._saldo_da_conta += deposito
         else:
             print('\033[31m Não foi possível realizar o depósito. \033[m')
 
@@ -142,8 +142,8 @@ class ContaBanco():
             O valor do saque deve ser positivo.\n
             O valor do saque não deve ser maior que o saldo na conta.
         """
-        if self.saldo_da_conta > saque > 0:
-            self.saldo_da_conta -= saque
+        if self._saldo_da_conta > saque > 0:
+            self._saldo_da_conta -= saque
         else:
             print('\033[31m Não foi possível realizar o saque. \033[m')
 
@@ -154,10 +154,10 @@ class ContaBanco():
             Conta corrente paga R$12.\n
             Conta poupança paga R$20.
         """
-        if self.tipo_da_conta == 'cc':
-            self.saldo_da_conta -= 12
-        elif self.tipo_da_conta == 'cp':
-            self.saldo_da_conta -= 20
+        if self._tipo_da_conta == 'cc':
+            self._saldo_da_conta -= 12
+        elif self._tipo_da_conta == 'cp':
+            self._saldo_da_conta -= 20
 
     #Método para mostrar todas as informações da conta
     def info(self):
