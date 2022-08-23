@@ -30,7 +30,7 @@ class ContaBanco():
 
     @id_da_conta.setter
     def id_da_conta(self, novo_id : int):
-        self.id_da_conta = novo_id
+        self._id_da_conta = novo_id
 
     @property
     def tipo_da_conta(self):
@@ -39,7 +39,7 @@ class ContaBanco():
 
     @tipo_da_conta.setter
     def tipo_da_conta(self, novo_tipo : str):
-        self.tipo_da_conta = novo_tipo
+        self._tipo_da_conta = novo_tipo
 
     @property
     def titular_da_conta(self):
@@ -48,7 +48,7 @@ class ContaBanco():
 
     @titular_da_conta.setter
     def titular_da_conta(self, novo_titular : str):
-        self.titular_da_conta = novo_titular
+        self._titular_da_conta = novo_titular
 
     @property
     def saldo_da_conta(self):
@@ -57,7 +57,7 @@ class ContaBanco():
 
     @saldo_da_conta.setter
     def saldo_da_conta(self, novo_saldo : float):
-        self.saldo_da_conta = novo_saldo
+        self._saldo_da_conta = novo_saldo
 
     @property
     def status_da_conta(self):
@@ -66,7 +66,7 @@ class ContaBanco():
 
     @status_da_conta.setter
     def status_da_conta(self, novo_status : bool):
-        self.status_da_conta = novo_status
+        self._status_da_conta = novo_status
 
     @property
     def divida_da_conta(self):
@@ -75,7 +75,7 @@ class ContaBanco():
 
     @divida_da_conta.setter
     def divida_da_conta(self, nova_divida : int):
-        self.divida_da_conta = nova_divida
+        self._divida_da_conta = nova_divida
 
     def abrir_conta(self, titular_da_conta : str, tipo_da_conta : str):
         """Ativa uma conta criada.
