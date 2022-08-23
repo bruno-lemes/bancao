@@ -26,7 +26,7 @@ class ContaBanco():
     @property
     def id_da_conta(self):
         """ID da conta."""
-        return self.id_da_conta
+        return self._id_da_conta
 
     @id_da_conta.setter
     def id_da_conta(self, novo_id : int):
@@ -35,7 +35,7 @@ class ContaBanco():
     @property
     def tipo_da_conta(self):
         """Tipo da conta."""
-        return self.tipo_da_conta
+        return self._tipo_da_conta
 
     @tipo_da_conta.setter
     def tipo_da_conta(self, novo_tipo : str):
@@ -44,7 +44,7 @@ class ContaBanco():
     @property
     def titular_da_conta(self):
         """Titular da conta."""
-        return self.titular_da_conta
+        return self._titular_da_conta
 
     @titular_da_conta.setter
     def titular_da_conta(self, novo_titular : str):
@@ -53,7 +53,7 @@ class ContaBanco():
     @property
     def saldo_da_conta(self):
         """Saldo da conta."""
-        return self.saldo_da_conta
+        return self._saldo_da_conta
 
     @saldo_da_conta.setter
     def saldo_da_conta(self, novo_saldo : float):
@@ -62,7 +62,7 @@ class ContaBanco():
     @property
     def status_da_conta(self):
         """Status da conta."""
-        return self.status_da_conta
+        return self._status_da_conta
 
     @status_da_conta.setter
     def status_da_conta(self, novo_status : bool):
@@ -71,7 +71,7 @@ class ContaBanco():
     @property
     def divida_da_conta(self):
         """Dívida pedente."""
-        return self.divida_da_conta
+        return self._divida_da_conta
 
     @divida_da_conta.setter
     def divida_da_conta(self, nova_divida : int):
