@@ -129,7 +129,6 @@ class ContaBanco():
         else:
             print('\033[31m Não foi possível realizar o depósito. \033[m')
 
-    #Método para realizar um saque
     def sacar(self, saque : float):
         """Realiza saques na conta.
 
@@ -159,7 +158,6 @@ class ContaBanco():
             self._saldo_da_conta -= 20
             self._divida_da_conta = 0
 
-    #Método para mostrar todas as informações da conta
     def info(self):
         """Mostra todas as informações da conta."""
         print(f'Titular da conta: {self.titular_da_conta}')
