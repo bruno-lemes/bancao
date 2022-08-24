@@ -1,6 +1,6 @@
 #pylint: disable=missing-module-docstring
 
-from nucleo_sistema.conta import ContaBanco
+from conta import ContaBanco
 
 #Controla o ativamento ou desligamento do sistema
 ENCERRAR_SISTEMA = False
