@@ -13,7 +13,7 @@ class ContaBanco():
             tipo_da_conta (str): Tipo de conta (default '').
             titular_da_conta (str): Nome do titular (default '').
             saldo_da_conta (float): Saldo disponível na conta (default 0).
-            status_da_conta (bool): Status da conta (default False).
+            status_da_conta (bool): Status de ativamento da conta (default False).
             divida_da_conta (int): Dívida pedente (default 0).
         """
         self.id_da_conta = randint(1, 10)
@@ -77,7 +77,7 @@ class ContaBanco():
     def divida_da_conta(self, nova_divida : int):
         self._divida_da_conta = nova_divida
 
-    def abrir_conta(self, titular_da_conta : str, tipo_da_conta : str):
+    def ativar_conta(self, titular_da_conta : str, tipo_da_conta : str):
         """Ativa uma conta criada.
 
         Arguments:
@@ -105,14 +105,16 @@ class ContaBanco():
         else:
             print('\033[31m Não foi possível abrir a conta. \033[m')
 
-    def fechar_conta(self):
+    def desativar_conta(self):
         """Desativa conta ativa.
 
         Conditions:
             A conta deve estar aberta.\n
             O saldo e a dívida devem estar zerados.
         """
-        if not (self._status_da_conta and self._divida_da_conta == 0 and self._saldo_da_conta == 0):
+        if self._status_da_conta and self._divida_da_conta == 0 and self._saldo_da_conta == 0:
+            self._status_da_conta = False
+        else:
             print('\033[31m Não foi possível desativar a conta. \033[m')
 
     def depositar(self, deposito : float):
@@ -157,12 +159,3 @@ class ContaBanco():
         elif self._tipo_da_conta == 'cp':
             self._saldo_da_conta -= 20
             self._divida_da_conta = 0
-
-    def info(self):
-        """Mostra todas as informações da conta."""
-        print(f'Titular da conta: {self.titular_da_conta}')
-        print(f'Tipo da conta: {self.titular_da_conta}')
-        print(f'ID da conta: {self.id_da_conta}')
-        print(f'Saldo disponível: {self.saldo_da_conta}')
-        print(f'Status da conta: {self.status_da_conta}')
-        print(f'Dívida pedente: {self.divida_da_conta}')
