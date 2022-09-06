@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "bancao"
+version = "0.1.0"
+description = ""
+authors = ["Bruno Lemes <bruno29batista@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+prospector = "^1.7.7"
+blue = "^0.9.1"
+isort = "^5.10.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
