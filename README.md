@@ -1,2 +1,2 @@
 # Bancão
- Mini projeto de uma simulação de um sistema de banco.
+ Mini projeto para o aprendizado de POO em Python.
